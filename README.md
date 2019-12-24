@@ -21,17 +21,17 @@
         debug: false               # 开启调试模式,调试模式下不进行加解密操作
     ```
 1. 代码示例
-```java
-@RestController
-@RequestMapping("order")
-public class OrderController {
-    @PostMapping("get_detail")
-    // @Encrypt     // 对返回数据进行加密
-    // @Decrypt     // 对请示参数进行解密
-    @EncryptDecrypt // 等效于同时使用@Encrypt,@Decrypt两个注解
-    public Result<OrderDTO> get(@RequestBody OrderReq req) {
-        return Result.success(orderService.getDetail(req.getId()));
+    ```java
+    @RestController
+    @RequestMapping("order")
+    public class OrderController {
+        @PostMapping("get_detail")
+        // @Encrypt     // 对返回数据进行加密
+        // @Decrypt     // 对请示参数进行解密
+        @EncryptDecrypt // 等效于同时使用@Encrypt,@Decrypt两个注解
+        public Result<OrderDTO> get(@RequestBody OrderReq req) {
+            return Result.success(orderService.getDetail(req.getId()));
+        }
     }
-}
-```
+    ```
 
